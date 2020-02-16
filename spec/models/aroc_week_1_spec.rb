@@ -78,14 +78,14 @@ describe 'ActiveRecord Obstacle Course, Week 1' do
 
   it '5. finds multiple items by id' do
     ids_to_find = [@item_1.id, @item_2.id, @item_4.id]
-    expected_objects = [@item_1, @item_4, @item_2]
+    expected_objects = [@item_1, @item_2, @item_4]
 
     # ----------------------- Using Ruby -------------------------
-    items = Item.all.select { |item| ids_to_find.include?(item.id) }
+    # items = Item.all.select { |item| ids_to_find.include?(item.id) }
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+			items = Item.find(ids_to_find)
     # ------------------------------------------------------------
 
     # Expectation
