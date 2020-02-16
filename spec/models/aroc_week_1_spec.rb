@@ -93,14 +93,14 @@ describe 'ActiveRecord Obstacle Course, Week 1' do
   end
 
   it '6. finds multiple orders by id' do
-    ids_to_find = [@order_1.id, @order_3.id, @order_5.id, @order_7.id]
+    ids_to_find = [@order_3.id, @order_5.id, @order_1.id, @order_7.id]
 
     # ----------------------- Using Ruby -------------------------
-    orders = Order.all.select { |order| ids_to_find.include?(order.id) }
+    # orders = Order.all.select { |order| ids_to_find.include?(order.id) }
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    	orders = Order.find(ids_to_find)
     # ------------------------------------------------------------
 
     # Expectation
